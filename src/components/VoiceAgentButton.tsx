@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { createVapi } from "@/lib/vapiService";
+import { createVapi } from "../lib/vapiService";
 
 const VoiceAgentButton: React.FC = () => {
   const [vapi, setVapi] = useState<any>(null);
