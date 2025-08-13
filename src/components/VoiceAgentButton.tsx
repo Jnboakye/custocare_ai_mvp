@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { createVapi } from "../lib/vapiService";
+import { createVapi, Vapi } from "../lib/vapiService";
 
 const VoiceAgentButton: React.FC = () => {
-  const [vapi, setVapi] = useState<any>(null);
+  const [vapi, setVapi] = useState<Vapi | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const apiKey = process.env.NEXT_PUBLIC_VOICE_AGENT_API_KEY!;

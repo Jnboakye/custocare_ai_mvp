@@ -1,7 +1,14 @@
 // src/services/vapiService.ts
 import Vapi from "@vapi-ai/web";
 
-export function createVapi(apiKey: string, assistantId: string, handlers: any) {
+type VapiHandlers = {
+  onCallStart: (...args: any[]) => void;
+  onCallEnd: (...args: any[]) => void;
+  onSpeechStart: (...args: any[]) => void;
+  onSpeechEnd: (...args: any[]) => void;
+};
+
+export function createVapi(apiKey: string, assistantId: string, handlers: VapiHandlers) {
   const vapiInstance = new Vapi(apiKey);
 
   vapiInstance.on("call-start", handlers.onCallStart);
