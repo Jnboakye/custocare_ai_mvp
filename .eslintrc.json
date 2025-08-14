@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "next/core-web-vitals"],
+  "rules": {
+    // TypeScript rules
+    "@typescript-eslint/no-explicit-any": "warn",   // warn instead of error
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+
+    // React rules
+    "react/react-in-jsx-scope": "off", // Not needed with Next.js 12+
+    
+    // General JS rules
+    "no-console": "warn"
+  }
+}
